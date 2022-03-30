@@ -191,3 +191,15 @@ ul {
     visibility: visible;
     transform: scale(1);
 }
+
+
+footer{
+    background-color: var(--darkBlue);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    padding: 1rem;
+}
