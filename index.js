@@ -21,6 +21,7 @@ app.get('/', async(request, response) => {
 //         response.send(html);
 //     })
 // })
+
 app.use(express.static('styles'));
 
 app.listen(process.env.PORT || 3000, () => console.log('App available on http://localhost:3000'));
