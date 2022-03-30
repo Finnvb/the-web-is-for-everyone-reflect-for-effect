@@ -8,7 +8,7 @@ const {readFile} = require('fs').promises;
 
 app.get('/', async(request, response) => {
 
-    response.send(await readFile('./index.html', 'utf-8'));
+    response.send(await readFile('./vragenlijst.html', 'utf-8'));
 })
 
 // app.get('/', (request, response) => {
