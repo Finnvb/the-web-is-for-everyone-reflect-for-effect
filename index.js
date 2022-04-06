@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
+const URL = 'https://jeugdzorg.api.fdnd.nl/'
 
+// console.log(URL)
 // Serve public files
 app.use(express.static('public'))
 
@@ -16,16 +18,22 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/flappie', (req, res) => {
+app.get('/vragenlijst', (req, res) => {
   // res.send('Hallo wereld!')
   res.render('flappie', {
     title: 'Dit is flappie',
   })
 })
 
-app.get('/quotes', (req, res) => {
-  fetchJson('https://quote.api.fdnd.nl/v1/quote').then(function (jsonData) {
-    res.render('quotes', {
+app.post('/vragenlijst', (req, res) => {
+  
+
+})
+
+app.get('/testing', (req, res) => {
+  fetchJson(`https://quote.api.fdnd.nl/v1/quote/`).then(function (jsonData) {
+   console.log(jsonData)
+    res.render('testing', {
       title: 'Dit is de quotes pagina',
       quotes: jsonData.data,
     })
@@ -60,3 +68,4 @@ async function fetchJson(url) {
     .then((response) => response.json())
     .catch((error) => error)
 }
+
