@@ -1,12 +1,16 @@
 const express = require('express')
 const app = express()
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
+const fetch = (...args) => import('node-fetch').then(({
+  default: fetch
+}) => fetch(...args))
 const URL = 'https://jeugdzorg.api.fdnd.nl/'
 // nodemon index.js //
 console.log(URL)
 //parses user data
-const bodyParser= require('body-parser')
-const urlencodedParser = bodyParser.urlencoded({extended:false})
+const bodyParser = require('body-parser')
+const urlencodedParser = bodyParser.urlencoded({
+  extended: false
+})
 // app.use(bodyParser.urlencoded({extended: true}))
 
 // Serve public files
@@ -31,7 +35,7 @@ app.get('/competentie', (req, res) => {
 })
 
 // app.post('/competentie', (req, res) => {
-  
+
 
 // })
 
@@ -47,16 +51,17 @@ app.post('/competentie',urlencodedParser, (req, res) => {
       res.render('form', {
         naam:req.body
 
-      
+
       })
     })
   })
 
 
 
+
 app.get('/testing', (req, res) => {
   fetchJson(`https://quote.api.fdnd.nl/v1/quote/`).then(function (jsonData) {
-   console.log(jsonData)
+    console.log(jsonData)
     res.render('testing', {
       title: 'Dit is de quotes pagina',
       quotes: jsonData.data,
