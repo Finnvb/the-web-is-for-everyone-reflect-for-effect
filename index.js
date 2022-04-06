@@ -42,7 +42,7 @@ app.post('/competentie',urlencodedParser, (req, res) => {
       body: JSON.stringify(req.body)
 
     }
-    fetchJson(`${URL}/v1/competentie`, postData).then(function () {
+    fetchJson(`${URL}/v1/competentie`, postData).then(function (postData) {
       console.log(postData)
       res.render('form', {
         naam:req.body
