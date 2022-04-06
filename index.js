@@ -2,8 +2,13 @@ const express = require('express')
 const app = express()
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const URL = 'https://jeugdzorg.api.fdnd.nl/'
+// nodemon index.js //
+console.log(URL)
+//parses user data
+const bodyParser= require('body-parser')
+const urlencodedParser = bodyParser.urlencoded({extended:false})
+// app.use(bodyParser.urlencoded({extended: true}))
 
-// console.log(URL)
 // Serve public files
 app.use(express.static('public'))
 
@@ -18,17 +23,36 @@ app.get('/', (req, res) => {
   })
 })
 
-app.get('/vragenlijst', (req, res) => {
+app.get('/competentie', (req, res) => {
   // res.send('Hallo wereld!')
-  res.render('flappie', {
-    title: 'Dit is flappie',
+  res.render('form', {
+    title: 'Alle competenties',
   })
 })
 
-app.post('/vragenlijst', (req, res) => {
+// app.post('/competentie', (req, res) => {
   
 
-})
+// })
+
+app.post('/competentie',urlencodedParser, (req, res) => {
+    const postData = {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(req.body)
+
+    }
+    fetchJson(`${URL}/v1/competentie`, postData).then(function () {
+      console.log(postData)
+      res.render('form', {
+        naam:req.body
+
+      
+      })
+    })
+  })
+
+
 
 app.get('/testing', (req, res) => {
   fetchJson(`https://quote.api.fdnd.nl/v1/quote/`).then(function (jsonData) {
@@ -63,9 +87,11 @@ const server = app.listen(app.get('port'), () => {
  * @param {*} url the api endpoint to address
  * @returns the json response from the api endpoint
  */
-async function fetchJson(url) {
-  return await fetch(url)
+
+
+
+async function fetchJson(url, postData = {}) {
+  return await fetch(url, postData)
     .then((response) => response.json())
     .catch((error) => error)
 }
-
