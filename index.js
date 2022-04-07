@@ -34,27 +34,83 @@ app.get('/competentie', (req, res) => {
   })
 })
 
-// app.post('/competentie', (req, res) => {
 
+//post requests naar api
+  app.post('/competentie', urlencodedParser, (req,res) =>{
+
+    const postData = {
+        method:'POST',
+        body:JSON.stringify(req.body),
+        headers:  {'Content-Type': 'application/json'}
+
+    }
+
+    fetchJson(`${URL}v1/competentie`, postData).then(function () {
+        res.render('form', {
+          naam: 'req.body'
+        })
+      })
+
+})
+
+
+app.post('/vragenlijst', urlencodedParser, (req,res) =>{
+
+  const postData = {
+      method:'POST',
+      body:JSON.stringify(req.body),
+      headers:  {'Content-Type': 'application/json'}
+
+  }
+
+  fetchJson(`${URL}v1/vragenlijst`, postData).then(function () {
+      res.render('form', {
+        naam: 'req.body'
+      })
+    })
+
+})
+
+// app.delete('/competentie:id', urlencodedParser, (request,response) =>{
+//   const postData = {
+//     method: 'delete',
+//     body: JSON.stringify(request.body),
+//     headers: {'Content-Type': 'application/json'}
+//   }
+//   fetchJson(`${URL}v1/competentie:id`, postData).then(function () {
+//     response.render('remove', {
+//       title: 'Smart zone verwijderen',
+//     })
+//   })
+// })
+
+// app.delete('/competentie', urlencodedParser, (req,res) =>{
+//   const deleteData = {
+//       method:'DELETE',
+//       body:JSON.stringify(req.body),
+//       headers:  {'Content-Type': 'application/json'}
+
+//   }
+
+//   fetchJson(`${URL}v1/competentie?data=${req.body}`, deleteData).then(function () {
+//     console.log("oke")
+//       res.render('form', {
+//        data: 'req.params.id'
+//       })
+//     })
 
 // })
 
-app.post('/competentie',urlencodedParser, (req, res) => {
-    const postData = {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(req.body)
-
-    }
-    fetchJson(`${URL}/v1/competentie`, postData).then(function (postData) {
-      console.log(postData)
-      res.render('form', {
-        naam:req.body
 
 
-      })
-    })
-  })
+
+
+
+
+
+
+
+
 
 
 
@@ -95,8 +151,8 @@ const server = app.listen(app.get('port'), () => {
 
 
 
-async function fetchJson(url, postData = {}) {
-  return await fetch(url, postData)
+async function fetchJson(url, data = {}) {
+  return await fetch(url, data)
     .then((response) => response.json())
     .catch((error) => error)
 }
