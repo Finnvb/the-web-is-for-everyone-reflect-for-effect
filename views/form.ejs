@@ -1,19 +1,31 @@
 <%- include('./partials/head') %>
 
 
+
 <form action="/competentie" method="POST">
-  <label for="naam">CompetentieNaam:</label>
-    <input type="text" placeholder="competentieNaam" name="naam">
-    <button type="submit">Submit</button>
+  <label for="naam">Competentie:</label>
+  <input type="text" placeholder="competentieNaam" name="naam">
+  <button type="submit">Submit</button>
 </form>
 
 
 <form action="/vragenlijst" method="POST">
-  <label for="naam">vragenlijstnaam:</label>
-    <input type="text" placeholder="vragenlijstNaam" name="naam">
-    <button type="submit">Submit</button>
+  <label for="naam">vragenlijst:</label>
+  <input type="text" placeholder="vragenlijstNaam" name="naam">
+  <button type="submit">Submit</button>
 </form>
 
+<form action="/vraag" method="POST">
+  <label for="vraag">vragenlijstId:</label>
+  <input type="text" placeholder="vragenlijstId" name="vragenlijstId">
+  <label for="vraag">competentieId:</label>
+  <input type="text" placeholder="competentieId" name="competentieId">
+  <label for="vraag">vraag:</label>
+  <input type="text" placeholder="vraagNaam" name="vraag">
+  <button type="submit">Submit</button>
+</form>
+
+<h1>  <%= competentie[3].naam %> </h1>
 
 
 
