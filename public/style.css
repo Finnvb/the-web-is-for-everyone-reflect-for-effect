@@ -79,7 +79,8 @@
     max-width: 60rem;
 }
 
-.introSection h1,p,
+.introSection h1,
+p,
 ul {
 
     padding-left: 10rem;
@@ -128,7 +129,7 @@ ul {
 
 
 
-.subject{
+.subject {
     padding-left: 0;
 }
 
@@ -193,13 +194,62 @@ ul {
 }
 
 
-footer{
+footer {
     background-color: var(--darkBlue);
     color: #ffffff;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100px;
+
 }
 
-footer p{
+footer p {
     padding: 1rem;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+
+#APIForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #e0e0e0;
+}
+
+#APIForm button {
+    background-color: var(--lightBlue);
+    padding: 1rem;
+    margin-top: auto;
+    border: none;
+}
+
+#APIForm button:hover {
+    background-color: var(--darkBlue);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+#APIForm label {
+    margin: 0.4rem 0;
+    margin-top: 1rem;
+}
+
+#APIForm input {
+    height: 25px;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#APIForm input:focus {
+    background-color: var(--darkBlue);
+    border: none;
+    color: #ffffff;
 }

@@ -2,20 +2,24 @@
 
 
 
-<form action="/competentie" method="POST">
+<section id="formContainer">
+<form action="/competentie" method="POST" id="APIForm" >
+  <h1>Post competentie</h1>
   <label for="naam">Competentie:</label>
   <input type="text" placeholder="competentieNaam" name="naam">
   <button type="submit">Submit</button>
 </form>
 
 
-<form action="/vragenlijst" method="POST">
+<form action="/vragenlijst" method="POST" id="APIForm">
+  <h1>Post vragenlijst</h1>
   <label for="naam">vragenlijst:</label>
   <input type="text" placeholder="vragenlijstNaam" name="naam">
   <button type="submit">Submit</button>
 </form>
 
-<form action="/vraag" method="POST">
+<form action="/vraag" method="POST" id="APIForm">
+  <h1>Post vraag</h1>
   <label for="vraag">vragenlijstId:</label>
   <input type="text" placeholder="vragenlijstId" name="vragenlijstId">
   <label for="vraag">competentieId:</label>
@@ -24,9 +28,15 @@
   <input type="text" placeholder="vraagNaam" name="vraag">
   <button type="submit">Submit</button>
 </form>
-
-<h1>  <%= competentie[3].naam %> </h1>
-
+</section>
 
 
-<%- include('./partials/foot') %>
+<h2><%-  %> </h2>
+
+
+
+
+
+
+</body>
+</html>

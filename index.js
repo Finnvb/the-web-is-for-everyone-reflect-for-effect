@@ -20,23 +20,44 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
+
+
+
+
 app.get('/', (req, res) => {
   // res.send('Hallo wereld!')
   res.render('index', {
     title: 'Dit is een index uit EJS',
-  })
+    })
 })
 
-app.get('/competentie', (req, res) => {
-  fetchJson(`${URL}v1/competentie`).then(function (jsonData) {
-    // res.send('Hallo wereld!')
-    res.render('form', {
-      title: 'Alle competenties',
-      competentie: jsonData.data,
-      vraag: jsonData.data
-    })
-  })
+
+
+app.get('/form', async (req, res) => {
+ let vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json=>json.data)
+
+ let competenties = await fetchJson(`${URL}v1/competentie`).then(json=>json.data)
+console.log(vragenlijst)
+let test = competenties.naam;
+console.log( competenties)
+  res.render('form'),{
+    test,
+    vragenlijst,
+    competenties
+  }
 })
+
+// app.get('/form', (req, res) => {
+//   fetchJson(`${URL}v1/competentie`).then(function (jsonData) {
+//     // res.send('Hallo wereld!')
+//     console.log(jsonData)
+//     res.render('form', {
+//       competenties: jsonData.data,
+      
+//     })
+//   })
+// })
+
 
 
 //post requests naar api
@@ -98,10 +119,6 @@ app.post('/vraag', urlencodedParser, (req, res) => {
     })
   })
 })
-
-
-
-
 
 
 
