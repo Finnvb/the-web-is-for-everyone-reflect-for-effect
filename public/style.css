@@ -211,8 +211,9 @@ footer p {
 #formContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 5rem;
+  
 }
 
 #APIForm {
@@ -221,6 +222,7 @@ footer p {
     padding: 1rem;
     border-radius: 1rem;
     background-color: #e0e0e0;
+ 
 }
 
 #APIForm button {

@@ -24,28 +24,46 @@ app.set('views', './views')
 
 
 
-app.get('/', (req, res) => {
-  // res.send('Hallo wereld!')
-  res.render('index', {
-    title: 'Dit is een index uit EJS',
-    })
-})
+// app.get('/', (req, res) => {
+//   // res.send('Hallo wereld!')
+//   res.render('index', {
+//     title: 'Dit is een index uit EJS',
+//   })
+// })
 
 
 
 app.get('/form', async (req, res) => {
- let vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json=>json.data)
+ vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json => json.data)
+vraag = await fetchJson(`${URL}v1/vraag`).then(json => json.data)
+ competentie = await fetchJson(`${URL}v1/competentie`).then(json => json.data)
+  console.log(vragenlijst)
+  console.log(vraag[2])
+  console.log(competentie)
+  res.render('form'), {
 
- let competenties = await fetchJson(`${URL}v1/competentie`).then(json=>json.data)
-console.log(vragenlijst)
-let test = competenties.naam;
-console.log( competenties)
-  res.render('form'),{
-    test,
     vragenlijst,
-    competenties
+    competentie,
+    vraag
+
   }
 })
+
+app.get('/', async (req, res) => {
+  vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json => json.data)
+ vraag = await fetchJson(`${URL}v1/vraag`).then(json => json.data)
+  competentie = await fetchJson(`${URL}v1/competentie`).then(json => json.data)
+   console.log(vragenlijst)
+  //  console.log(vraag[2])
+   console.log(competentie)
+   res.render('index'), {
+ 
+     vragenlijst,
+     competentie,
+     vraag
+ 
+   }
+ })
 
 // app.get('/form', (req, res) => {
 //   fetchJson(`${URL}v1/competentie`).then(function (jsonData) {
@@ -53,7 +71,7 @@ console.log( competenties)
 //     console.log(jsonData)
 //     res.render('form', {
 //       competenties: jsonData.data,
-      
+
 //     })
 //   })
 // })
@@ -106,16 +124,16 @@ app.post('/vraag', urlencodedParser, (req, res) => {
     body: JSON.stringify(req.body),
     headers: {
       'Content-Type': 'application/json'
-    } 
+    }
   }
-  
-  fetchJson(`${URL}v1/vraag`, postData).then(function (data) {  
+
+  fetchJson(`${URL}v1/vraag`, postData).then(function (data) {
     console.log(data);
     res.render('form', {
       vragenlijstId: 'req.body',
       competentieId: 'req.body',
       vraag: 'req.body'
-      
+
     })
   })
 })
@@ -147,11 +165,11 @@ app.get('/quote/:quoteId', (request, response) => {
   })
 })
 
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 1337)
 
 const server = app.listen(app.get('port'), () => {
   console.log(`Application started on port: ${app.get('port')}`)
-  console.log('http://localhost:8000');
+  console.log('http://localhost:1337');
 })
 
 /**
