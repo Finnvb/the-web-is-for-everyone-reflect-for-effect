@@ -41,11 +41,13 @@
     color: var(--darkBlue);
 }
 
-.navLink:focus {
+
+.navLinkActive{
     color: #ffffff;
     background-color: var(--lightBlue);
     padding: 0.5rem;
     border-radius: 0.5rem;
+    text-decoration: none;
 }
 
 
@@ -94,18 +96,19 @@ ul {
 
 }
 
-.introSection a {
+.introSectionLinks {
     color: #ffffff;
     text-decoration: none;
     cursor: pointer;
     margin-right: 2.5rem;
-
 }
 
-.introSection a:focus {
+.linkActive {
     color: var(--darkBlue);
+    text-decoration: none;
     background-color: #ffffff;
     padding: 1rem;
+    margin-right: 10px;
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -123,6 +126,10 @@ ul {
 .competentieHeader {
     color: var(--lightBlue);
 
+}
+
+.disabled {
+    display: none;
 }
 
 
@@ -213,7 +220,7 @@ footer p {
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 5rem;
-  
+
 }
 
 #APIForm {
@@ -222,7 +229,7 @@ footer p {
     padding: 1rem;
     border-radius: 1rem;
     background-color: #e0e0e0;
- 
+
 }
 
 #APIForm button {
@@ -254,4 +261,34 @@ footer p {
     background-color: var(--darkBlue);
     border: none;
     color: #ffffff;
+}
+
+.grafiek1Section {
+
+    margin: 2rem 0 2rem 10rem ;
+    display: none;
+}
+
+.enabled{
+    display: block;
+}
+
+.pill{
+    /* background-color: #152853; */
+    width: 100px;
+    height: 20px;
+    margin: 10px 10px 0px 0;
+    border: 2px solid var(--lightBlue);
+    border-radius: 16px;
+}
+
+.grafiek1Competentie{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+   
+}
+
+.grafiek1Section{
+    color: var(--lightBlue);
 }
