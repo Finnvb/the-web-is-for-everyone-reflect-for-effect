@@ -55,6 +55,23 @@ app.get('/', async (req, res) => {
  })
 
 
+ app.get('/login', async (req, res) => {
+  vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json => json.data)
+ vraag = await fetchJson(`${URL}v1/vraag`).then(json => json.data)
+  competentie = await fetchJson(`${URL}v1/competentie`).then(json => json.data)
+   console.log(vragenlijst)
+   console.log(vraag[2])
+   console.log(competentie)
+   res.render('login'), {
+ 
+     vragenlijst,
+     competentie,
+     vraag
+ 
+   }
+ })
+
+
 
 
 //post requests naar api
