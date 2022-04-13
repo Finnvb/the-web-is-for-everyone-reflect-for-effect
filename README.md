@@ -12,6 +12,12 @@ Met behulp van Node.js en Express worden de pagina's van reflect for effect via 
 
 ## Beschrijving
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+![afbeelding](https://user-images.githubusercontent.com/26089533/163154711-b687e98a-dcf8-4e28-acf6-eeabf4d0a1a3.png)
+
+![afbeelding](https://user-images.githubusercontent.com/26089533/163154936-f81d1310-47eb-48b6-9a4c-492b740573f1.png)
+
+![afbeelding](https://user-images.githubusercontent.com/26089533/163155280-fed908ef-83bc-4096-b1db-a6aac770c988.png)
+
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
