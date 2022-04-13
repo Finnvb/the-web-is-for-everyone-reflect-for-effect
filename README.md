@@ -1,7 +1,5 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
-
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Reflect for Effect - sprint 9
+Met behulp van Node.js en Express worden de pagina's van reflect for effect via de server gerenderd. 
 
 ## Inhoudsopgave
 
@@ -14,6 +12,15 @@
 
 ## Beschrijving
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+![afbeelding](https://user-images.githubusercontent.com/26089533/163154711-b687e98a-dcf8-4e28-acf6-eeabf4d0a1a3.png)
+
+![afbeelding](https://user-images.githubusercontent.com/26089533/163154936-f81d1310-47eb-48b6-9a4c-492b740573f1.png)
+
+![afbeelding](https://user-images.githubusercontent.com/26089533/163155280-fed908ef-83bc-4096-b1db-a6aac770c988.png)
+
+![afbeelding](https://user-images.githubusercontent.com/26089533/163158805-9f3705ff-8e70-4a4d-b691-98fe3fd232dd.png)
+
+
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
