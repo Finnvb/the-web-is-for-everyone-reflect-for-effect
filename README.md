@@ -18,6 +18,9 @@ Met behulp van Node.js en Express worden de pagina's van reflect for effect via 
 
 ![afbeelding](https://user-images.githubusercontent.com/26089533/163155280-fed908ef-83bc-4096-b1db-a6aac770c988.png)
 
+![afbeelding](https://user-images.githubusercontent.com/26089533/163158805-9f3705ff-8e70-4a4d-b691-98fe3fd232dd.png)
+
+
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
