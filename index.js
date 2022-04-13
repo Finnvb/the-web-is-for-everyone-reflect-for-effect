@@ -22,17 +22,6 @@ app.set('views', './views')
 
 
 
-
-
-// app.get('/', (req, res) => {
-//   // res.send('Hallo wereld!')
-//   res.render('index', {
-//     title: 'Dit is een index uit EJS',
-//   })
-// })
-
-
-
 app.get('/form', async (req, res) => {
  vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json => json.data)
 vraag = await fetchJson(`${URL}v1/vraag`).then(json => json.data)
@@ -65,16 +54,6 @@ app.get('/', async (req, res) => {
    }
  })
 
-// app.get('/form', (req, res) => {
-//   fetchJson(`${URL}v1/competentie`).then(function (jsonData) {
-//     // res.send('Hallo wereld!')
-//     console.log(jsonData)
-//     res.render('form', {
-//       competenties: jsonData.data,
-
-//     })
-//   })
-// })
 
 
 
@@ -144,26 +123,26 @@ app.post('/vraag', urlencodedParser, (req, res) => {
 
 
 
-app.get('/testing', (req, res) => {
-  fetchJson(`https://quote.api.fdnd.nl/v1/quote/`).then(function (jsonData) {
-    console.log(jsonData)
-    res.render('testing', {
-      title: 'Dit is de quotes pagina',
-      quotes: jsonData.data,
-    })
-  })
-})
+// app.get('/testing', (req, res) => {
+//   fetchJson(`https://quote.api.fdnd.nl/v1/quote/`).then(function (jsonData) {
+//     console.log(jsonData)
+//     res.render('testing', {
+//       title: 'Dit is de quotes pagina',
+//       quotes: jsonData.data,
+//     })
+//   })
+// })
 
-app.get('/quote/:quoteId', (request, response) => {
-  fetchJson(`https://quote.api.fdnd.nl/v1/quote/${request.params.quoteId}`).then(function (
-    jsonData
-  ) {
-    response.render('quote', {
-      title: 'Dit is een enkele quote',
-      quote: jsonData.data[0],
-    })
-  })
-})
+// app.get('/quote/:quoteId', (request, response) => {
+//   fetchJson(`https://quote.api.fdnd.nl/v1/quote/${request.params.quoteId}`).then(function (
+//     jsonData
+//   ) {
+//     response.render('quote', {
+//       title: 'Dit is een enkele quote',
+//       quote: jsonData.data[0],
+//     })
+//   })
+// })
 
 app.set('port', process.env.PORT || 1337)
 
