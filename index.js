@@ -1,5 +1,5 @@
 const express = require('express')
-const compression = require('compression')
+// const compression = require('compression')
 const app = express()
 const fetch = (...args) => import('node-fetch').then(({
   default: fetch
@@ -22,19 +22,19 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 
 
-app.use( function (req, res, next) {
+// app.use( function (req, res, next) {
 
-  // only cache GET requests
-  if(req.method =='GET') {
-    res.set('Cache-control', 'public, max-age=300')
-  } else{
+//   // only cache GET requests
+//   if(req.method =='GET') {
+//     res.set('Cache-control', 'public, max-age=300')
+//   } else{
 
-    res.set('Cache-control', `no-store`)
-  }
-  next()
-})
+//     res.set('Cache-control', `no-store`)
+//   }
+//   next()
+// })
 
-app.use(compression())
+// app.use(compression())
 
 app.get('/form', async (req, res) => {
  vragenlijst = await fetchJson(`${URL}v1/vragenlijst`).then(json => json.data)
