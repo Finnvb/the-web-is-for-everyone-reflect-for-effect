@@ -175,11 +175,11 @@ app.post('/vraag', urlencodedParser, (req, res) => {
 //   })
 // })
 
-app.set('port', process.env.PORT || 1337)
+app.set('port', process.env.PORT || 1338)
 
 const server = app.listen(app.get('port'), () => {
   console.log(`Application started on port: ${app.get('port')}`)
-  console.log('http://localhost:1337');
+  console.log('http://localhost:1338');
 })
 
 /**
